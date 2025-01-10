@@ -1,0 +1,22 @@
+{
+  "material-icon-theme.activeIconPack": "qwik",
+  "emmet.includeLanguages": {
+    "typescriptreact": "html"
+  },
+  "emmet.preferences": {
+    "output.selfClosingStyle": "xhtml"
+  },
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.module.scss, ${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json, qwik*.d.ts",
+    "package.json": "pnpm-lock.yaml",
+    "vite.config.ts": "*.config.js, *.config.ts, *.config.cjs, *.config.mjs, *config, biome.*",
+    ".gitignore": ".*ignore",
+    "root.tsx": "entry.*"
+  },
+  "cSpell.words": ["partytown", "qwik", "qwikest", "SUPABASE", "Zaira"]
+}
