@@ -1,0 +1,143 @@
+@use 'sass:math';
+
+/*
+*   Kevin Powell
+*   https://youtu.be/cCAtD_BAHNw
+*/
+
+// :where(*, *::before, *::after) {
+// 	box-sizing: border-box;
+// }
+
+// :where(*) {
+// 	margin: 0;
+// 	padding: 0;
+// 	font: inherit; /* Get rid of all font sizes and heights */
+// 	text-wrap: pretty; /* Prevents orphans on lines */
+// }
+
+:where(:focus-visible) {
+	outline-color: transparent;
+}
+
+:where(html) {
+	color-scheme: dark light; /* Default dark */
+
+	@supports (hanging-punctuation: first last) {
+		/* https://caniuse.com/?search=hanging-punctuation */
+		hanging-punctuation: first last;
+	}
+
+	@supports (interpolate-size: allow-keywords) {
+		/* https://caniuse.com/?search=allow-keywords */
+		interpolate-size: allow-keywords;
+	}
+}
+
+/* Media responsive */
+:where(img, picture, svg, video) {
+	display: block;
+	max-width: 100%;
+}
+
+:where(img) {
+	vertical-align: middle;
+	shape-margin: 0.75rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: auto;
+	font-style: italic;
+}
+
+// :where(h1, h2, h3, h4, h5, h6) {
+// 	text-wrap: balance;
+// }
+
+:where(ul, ol) {
+	list-style: none;
+}
+
+:where(button) {
+	cursor: pointer;
+}
+
+:where(p) {
+	max-width: 75ch;
+}
+
+:where(a) {
+	color: inherit;
+	text-decoration: none;
+}
+
+:where(dialog:not([open])) {
+	pointer-events: none;
+}
+:where(dialog[open])::backdrop {
+	cursor: crosshair;
+}
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+	display: none;
+}
+
+/* Scroll smooth */
+@media screen and (prefers-reduced-motion: no-preference) {
+	@supports not selector(:has(*)) {
+		html {
+			scroll-behavior: smooth;
+			scroll-padding-top: 3rem;
+		}
+	}
+
+	@supports selector(:has(*)) {
+		:has(:target) {
+			scroll-behavior: smooth;
+			scroll-padding-top: 3rem;
+		}
+	}
+}
+
+[data-env='dev'] {
+	.debug,
+	&.debug {
+		opacity: 1 !important;
+		outline: 1px dotted oklch(35% 0.47 0 / 50%) !important;
+		background-color: oklch(35% 0.47 0 / 6.25%) !important;
+
+		$base: '';
+		@for $i from 1 through 16 {
+			$base: $base + '>*';
+			$hue: $i * 45;
+			$opacity-outline: math.div($i * 100, 16) * 0.01;
+			$opacity-background: math.div($i * 100, 32) * 0.01;
+
+			#{$base} {
+				outline: 1px
+					dotted
+					oklch(35% 0.47 #{$hue} / #{$opacity-outline}) !important;
+				outline-offset: -1px;
+				background-color: oklch(
+					35% 0.47 #{$hue} / #{$opacity-background}
+				) !important;
+			}
+		}
+	}
+}
+
+/* Stop any animation if the user has set their device to "prefers reduced motion". */
+@​media (prefers-reduced-motion: reduce) {
+	*,
+	::after,
+	::before {
+		animation: none !important;
+		animation-duration: 1ms !important;
+		animation-delay: -1ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 1ms !important;
+		background-attachment: initial !important;
+	}
+}

@@ -1,0 +1,36 @@
+:root {
+  --size-px: clamp(1px, 0.5232px + 0.0769vw, 2px);
+  --size-005: clamp(2px, 1.0464px + 0.1538vw, 4px);
+  --size-010: clamp(4px, 2.0928px + 0.3077vw, 8px);
+  --size-015: clamp(5px, 2.616px + 0.3846vw, 10px);
+  --size-020: clamp(8px, 4.184px + 0.6154vw, 16px);
+  --size-025: clamp(10px, 5.2304px + 0.7692vw, 20px);
+  --size-030: clamp(12px, 6.2768px + 0.9231vw, 24px);
+  --size-035: clamp(14px, 7.3232px + 1.0769vw, 28px);
+  --size-040: clamp(16px, 8.3696px + 1.2308vw, 32px);
+  --size-050: clamp(20px, 10.4608px + 1.5385vw, 40px);
+  --size-060: clamp(24px, 12.5536px + 1.8462vw, 48px);
+  --size-070: clamp(28px, 14.6464px + 2.1538vw, 56px);
+  --size-080: clamp(32px, 16.7392px + 2.4615vw, 64px);
+  --size-090: clamp(36px, 18.8304px + 2.7692vw, 72px);
+  --size-100: clamp(40px, 20.9232px + 3.0769vw, 80px);
+  --size-110: clamp(44px, 23.016px + 3.3846vw, 88px);
+  --size-120: clamp(48px, 25.1072px + 3.6923vw, 96px);
+  --size-140: clamp(56px, 29.2928px + 4.3077vw, 112px);
+  --size-160: clamp(64px, 33.4768px + 4.9231vw, 128px);
+  --size-200: clamp(80px, 41.8464px + 6.1538vw, 160px);
+  --size-240: clamp(96px, 50.216px + 7.3846vw, 192px);
+  --size-280: clamp(112px, 58.584px + 8.6154vw, 224px);
+  --size-320: clamp(128px, 66.9536px + 9.8462vw, 256px);
+  --size-360: clamp(144px, 75.3232px + 11.0769vw, 288px);
+  --size-400: clamp(160px, 83.6928px + 12.3077vw, 320px);
+  --size-440: clamp(176px, 92.0608px + 13.5385vw, 352px);
+  --size-480: clamp(192px, 100.4304px + 14.7692vw, 384px);
+  --size-520: clamp(208px, 108.8px + 16vw, 416px);
+  --size-560: clamp(224px, 117.1696px + 17.2308vw, 448px);
+  --size-600: clamp(240px, 125.5392px + 18.4615vw, 480px);
+  --size-640: clamp(256px, 133.9072px + 19.6923vw, 512px);
+  --size-720: clamp(288px, 150.6464px + 22.1538vw, 576px);
+  --size-800: clamp(320px, 167.384px + 24.6154vw, 640px);
+  --size-960: clamp(384px, 200.8608px + 29.5385vw, 768px);
+}
