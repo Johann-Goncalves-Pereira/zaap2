@@ -1,5 +1,6 @@
 ---
 import StarrySky from "./widgets/StarrySky";
+import { AnimatedText } from "@components/layout/widgets/AnimatedText.tsx";
 ---
 
 <article
@@ -13,14 +14,25 @@ import StarrySky from "./widgets/StarrySky";
   <header
     class='mr-auto grid gap-4 pb-24 opacity-90 portrait:mx-4 landscape:ml-12'
   >
-    <h1 class='text-4xl text-pretty'>Zaira Gonçalves Pereira</h1>
-    <h3
+    <h1 class='text-4xl text-pretty'>
+      <AnimatedText text='Zaira Gonçalves Pereira' speed={0.01} />
+    </h1>
+    <h2
       class='max-w-[clamp(36.25rem,33.2065rem+15.2174vw,45rem)] text-xs opacity-80 text-pretty'
     >
-      I am Zaira, an artist passionate about creating beautiful and inspiring
-      art. My journey is driven by creativity and a desire to bring beauty into
-      others' lives. Join me and explore the wonders of imagination and
-      expression.
-    </h3>
+      <AnimatedText
+        text="I am Zaira, an artist passionate about creating beautiful and inspiring art. My journey is driven by creativity and a desire to bring beauty into others' lives. Join me and explore the wonders of imagination and expression."
+        speed={0.00125}
+      />
+    </h2>
   </header>
 </article>
+
+<style>
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
