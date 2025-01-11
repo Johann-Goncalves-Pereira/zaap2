@@ -1,6 +1,17 @@
 ---
-
+import House from "@media/assets/house.astro";
+import Images from "@media/assets/image.astro";
 ---
-<header>
-  aaa
+
+<header
+  class='fixed inset-x-0 top-4 m-auto w-fit bg-rose-500/30 rounded-full border-2 border-rose-500 backdrop-blur-sm'
+>
+  <nav class='flex'>
+    <a class='py-1 pr-2 pl-2.5' href='/' aria-label='Go to Home page'>
+      <House class='w-4 h-5' />
+    </a>
+    <a class='py-1 pr-2.5 pl-2' href='/gallery' aria-label='Go to Gallery page'>
+      <Images class='w-4 h-5' />
+    </a>
+  </nav>
 </header>

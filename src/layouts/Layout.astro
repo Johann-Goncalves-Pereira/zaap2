@@ -1,5 +1,6 @@
 ---
-import Header from '@components/layout/header.astro'
+import Header from "@components/layout/Header.astro";
+import Noise from "@components/layout/Noise.astro";
 
 interface Props {
   title: string;
@@ -7,24 +8,40 @@ interface Props {
 
 const { title } = Astro.props;
 
-import '../media/styles/_index.scss'
+import "../media/styles/_index.scss";
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Qwik + Astro integration" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class='border-gray-900'>
-		<Header/>
-		<slot />
-	</body>
-</html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <meta name='description' content='Zaira Gonçalves Pereira' />
 
-<style>
-</style>
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+
+    <meta name='generator' content={Astro.generator} />
+
+    <title>{title}</title>
+
+    {import.meta.env.PROD && (
+      <script type='speculationrules' is:inline>
+      {
+        "prerender": [
+        {
+          "urls": ["/", "/gallery"],
+          "eagerness": "eager"
+        }
+        ]
+      }
+      </script>
+    )}
+  </head>
+  <body class='border-gray-900'>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Noise />
+  </body>
+</html>

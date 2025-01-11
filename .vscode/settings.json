@@ -18,5 +18,21 @@
     ".gitignore": ".*ignore",
     "root.tsx": "entry.*"
   },
-  "cSpell.words": ["partytown", "qwik", "qwikest", "SUPABASE", "Zaira"]
+  "[js][ts][jsx][tsx][vue][json][astro][mdx][html][astro]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "lucide",
+    "partytown",
+    "qwik",
+    "qwikest",
+    "Shouty",
+    "speculationrules",
+    "SUPABASE",
+    "Zaira"
+  ],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  }
 }
