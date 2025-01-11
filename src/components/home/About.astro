@@ -6,10 +6,12 @@ import Profile from "@media/images/profile.png";
 import Twitter from "@media/assets/twitter.astro";
 ---
 
-<article class='h-screen py-16 grid grid-cols-[1fr,auto]'>
-  <header class='flex flex-col items-center gap-4 col-start-2 row-start-1'>
+<article class='h-screen py-16 grid md:grid-cols-[1fr,auto] gap-4 lg:gap-8'>
+  <header
+    class='flex flex-col items-center gap-4 md:col-start-2 md:row-start-1 row-start-2'
+  >
     <div
-      class='h-40 w-40 mx-16 overflow-hidden rounded-full bg-[var(--hero--color)] outline-gray-700 outline-solid'
+      class='h-40 w-40 mx-16 overflow-hidden rounded-full border-2 border-rose-500 outline-gray-700 outline-solid'
     >
       <Image
         src={Profile}
@@ -18,7 +20,7 @@ import Twitter from "@media/assets/twitter.astro";
       />
     </div>
 
-    <p class='md:max-w-48 text-pretty opacity-75'>
+    <p class='md:max-w-48 text-pretty opacity-75 px-8 md:px-0'>
       Velit eligendi voluptas maiores, libero magni perspiciatis recusandae?
       <br />
       <br />
@@ -37,5 +39,5 @@ import Twitter from "@media/assets/twitter.astro";
       </a>
     </div>
   </header>
-  <footer class='col-start-1 row-start-1 grid'>aaa</footer>
+  <footer class='md:col-start-1 row-start-1 grid'>aaa</footer>
 </article>
