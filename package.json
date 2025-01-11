@@ -12,7 +12,7 @@
     "dev": "astro dev",
     "fix": "pnpm lint && pnpm format",
     "format": "biome format --write .",
-    "lint": "biome check --apply-unsafe .",
+    "lint": "biome check --write --unsafe .",
     "preview": "pnpm build && astro preview",
     "prod": "pnpm check && astro build",
     "start": "astro dev --open"
@@ -29,6 +29,7 @@
     "@types/gapi": "^0.0.47",
     "gapi": "^0.0.3",
     "sass": "^1.83.1",
+    "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17"
   },
   "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"

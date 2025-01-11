@@ -11,7 +11,7 @@ export const AnimatedText = component$<AnimatedTextProps>(({ text, speed }) => {
       opacity: 1; 
       transform: translateY(0);
       }}
-    `
+    `,
   );
 
   return (

@@ -1,9 +1,9 @@
 import {
-  component$,
-  useVisibleTask$,
-  useSignal,
   $,
+  component$,
+  useSignal,
   useStylesScoped$,
+  useVisibleTask$,
 } from "@builder.io/qwik";
 
 interface GradientConfig {
@@ -143,7 +143,7 @@ const createStars = $(
   async (
     width: number,
     height: number,
-    config: StarConfig = STAR_CONFIG
+    config: StarConfig = STAR_CONFIG,
   ): Promise<Star[]> => {
     const starCount = Math.floor((width * height) / config.density);
     const stars: Star[] = [];
@@ -162,7 +162,7 @@ const createStars = $(
     }
 
     return stars;
-  }
+  },
 );
 
 /**
@@ -173,7 +173,7 @@ const createGradient = $(
     ctx: CanvasRenderingContext2D,
     width: number,
     height: number,
-    gradientConfig: GradientConfig
+    gradientConfig: GradientConfig,
   ): CanvasGradient => {
     const gradient = ctx.createLinearGradient(0, height, width, 0);
     gradient.addColorStop(0, gradientConfig.bottomLeft);
@@ -181,7 +181,7 @@ const createGradient = $(
     gradient.addColorStop(0.66, gradientConfig.middleRight);
     gradient.addColorStop(1, gradientConfig.topRight);
     return gradient;
-  }
+  },
 );
 
 /**
@@ -194,7 +194,7 @@ const updateStarPosition = $(
     width: number,
     height: number,
     reduceMotion = false,
-    config: StarConfig = STAR_CONFIG
+    config: StarConfig = STAR_CONFIG,
   ): Star => {
     if (reduceMotion) {
       return star;
@@ -217,7 +217,7 @@ const updateStarPosition = $(
     }
 
     return star;
-  }
+  },
 );
 
 /**
@@ -244,7 +244,7 @@ export default component$(() => {
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ cleanup }) => {
     const reduceMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
+      "(prefers-reduced-motion: reduce)",
     ).matches;
 
     const canvas = canvasRef.value;
@@ -286,7 +286,7 @@ export default component$(() => {
         ctx,
         canvas.width,
         canvas.height,
-        STAR_CONFIG.gradient
+        STAR_CONFIG.gradient,
       );
       ctx.fillStyle = gradient;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -299,7 +299,7 @@ export default component$(() => {
             globalAngleOffset,
             canvas.width,
             canvas.height,
-            reduceMotion
+            reduceMotion,
           );
 
           const opacity: number =
@@ -314,12 +314,12 @@ export default component$(() => {
             updatedStar.y,
             updatedStar.size,
             0,
-            Math.PI * 2
+            Math.PI * 2,
           );
           ctx.fill();
 
           return updatedStar;
-        })
+        }),
       );
 
       animationFrame = requestAnimationFrame(renderFrame);
@@ -340,7 +340,7 @@ export default component$(() => {
   return (
     <canvas
       ref={canvasRef}
-      class='starry-sky absolute top-0 left-0 -z-10 h-full w-full'
+      class="starry-sky absolute top-0 left-0 -z-10 h-full w-full"
     />
   );
 });
