@@ -244,7 +244,7 @@ export default component$(() => {
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(({ cleanup }) => {
     const reduceMotion = window.matchMedia(
-      `(prefers-reduced-motion: reduce)`
+      "(prefers-reduced-motion: reduce)"
     ).matches;
 
     const canvas = canvasRef.value;
