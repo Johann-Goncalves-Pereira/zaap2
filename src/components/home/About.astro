@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 
 import Instagram from "@media/assets/instagram.astro";
 import Profile from "@media/images/profile.png";
+import Twitter from "@media/assets/twitter.astro";
 ---
 
 <article class='h-screen py-16 grid grid-cols-[1fr,auto]'>
@@ -27,9 +28,13 @@ import Profile from "@media/images/profile.png";
       vel!
     </p>
 
-    <div class='mt-auto'>
-      <Instagram />
-      
+    <div class='mt-auto flex gap-4 px-8'>
+      <a href='#'>
+        <Instagram />
+      </a>
+      <a href='#'>
+        <Twitter />
+      </a>
     </div>
   </header>
   <footer class='col-start-1 row-start-1 grid'>aaa</footer>

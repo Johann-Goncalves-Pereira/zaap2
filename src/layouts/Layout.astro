@@ -9,6 +9,7 @@ interface Props {
 const { title } = Astro.props;
 
 import "../media/styles/_index.scss";
+import Footer from "@components/layout/Footer.astro";
 ---
 
 <!doctype html>
@@ -40,6 +41,7 @@ import "../media/styles/_index.scss";
     <main>
       <slot />
     </main>
+    <Footer />
     <Noise />
   </body>
 </html>
