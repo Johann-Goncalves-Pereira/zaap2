@@ -41,7 +41,7 @@ export default {
       "8xl": ["clamp(6rem, 3rem + 7.5vw, 12rem)", "1"],
       "9xl": ["clamp(8rem, 4rem + 10vw, 16rem)", "1"],
     },
-    size: {
+    spacing: {
       0: "0",
       px: "var(--size-px)",
       0.5: "var(--size-005)",
