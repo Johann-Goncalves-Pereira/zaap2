@@ -1,2 +1,40 @@
 ---
+import { Image } from "astro:assets";
+
+import Profile from "@media/images/profile.png";
+import Instagram from "@media/assets/instagram.astro";
+import Twitter from "@media/assets/twitter.astro";
+import MiniGallery from "./widgets/MiniGallery";
 ---
+
+<article class='h-screen py-16 grid grid-cols-[1fr,auto]'>
+  <header class='flex flex-col items-center gap-4 col-start-2 row-start-1'>
+    <div
+      class='h-40 w-40 mx-16 overflow-hidden rounded-full bg-[var(--hero--color)] outline-gray-700 outline-solid'
+    >
+      <Image
+        src={Profile}
+        alt='Profile Photo of Zaira Gonçalves Pereira'
+        class='aspect-square object-cover object-top'
+      />
+    </div>
+
+    <p class='md:max-w-48 text-pretty opacity-75'>
+      Velit eligendi voluptas maiores, libero magni perspiciatis recusandae?
+      <br />
+      <br />
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim, beatae
+      architecto impedit expedita modi cum explicabo consequuntur. Nisi dolores,
+      magnam temporibus itaque accusantium dolorum nulla doloremque distinctio? Placeat,
+      vel!
+    </p>
+
+    <div class='mt-auto flex px-16 w-full justify-center gap-4'>
+      <Instagram />
+      <Twitter />
+    </div>
+  </header>
+  <footer class='col-start-1 row-start-1 grid'>
+    <MiniGallery />
+  </footer>
+</article>

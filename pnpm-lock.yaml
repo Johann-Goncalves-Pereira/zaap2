@@ -27,6 +27,12 @@ importers:
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
+      '@types/gapi':
+        specifier: ^0.0.47
+        version: 0.0.47
+      gapi:
+        specifier: ^0.0.3
+        version: 0.0.3
       sass:
         specifier: ^1.83.1
         version: 1.83.1
@@ -851,6 +857,9 @@ packages:
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
+  '@types/gapi@0.0.47':
+    resolution: {integrity: sha512-/ZsLuq6BffMgbKMtZyDZ8vwQvTyKhKQ1G2K6VyWCgtHHhfSSXbk4+4JwImZiTjWNXfI2q1ZStAwFFHSkNoTkHA==}
+
   '@types/hast@3.0.4':
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
 
@@ -1049,6 +1058,12 @@ packages:
   clsx@2.1.1:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
+
+  coffee-script@1.12.7:
+    resolution: {integrity: sha512-fLeEhqwymYat/MpTPUjSKHVYYl0ec2mOyALEMLmzr5i1isuG+6jfI2j2d5oBO3VIzgUXgBVIcOT9uH1TFxBckw==}
+    engines: {node: '>=0.8.0'}
+    deprecated: CoffeeScript on NPM has moved to "coffeescript" (no hyphen)
+    hasBin: true
 
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -1264,6 +1279,10 @@ packages:
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
+
+  gapi@0.0.3:
+    resolution: {integrity: sha512-09nvJdQex78sxmMyOUnpr941fdWMJQjhFZi7vsW91zM3RYoCfkKU83UoJckn/GBEMmvYNZ4vL47eZ6lv/Bnavw==}
+    engines: {node: '>= 0.4.0'}
 
   get-caller-file@2.0.5:
     resolution: {integrity: sha512-DyFP3BM/3YHTQOCUL/w0OZHR0lpKeGrxotcHWcqNEdnltqFwXVfhEBQ94eIo34AfQpo0rGki4cyIiftY06h2Fg==}
@@ -3041,6 +3060,8 @@ snapshots:
 
   '@types/estree@1.0.6': {}
 
+  '@types/gapi@0.0.47': {}
+
   '@types/hast@3.0.4':
     dependencies:
       '@types/unist': 3.0.3
@@ -3348,6 +3369,8 @@ snapshots:
 
   clsx@2.1.1: {}
 
+  coffee-script@1.12.7: {}
+
   color-convert@2.0.1:
     dependencies:
       color-name: 1.1.4
@@ -3566,6 +3589,10 @@ snapshots:
     optional: true
 
   function-bind@1.1.2: {}
+
+  gapi@0.0.3:
+    dependencies:
+      coffee-script: 1.12.7
 
   get-caller-file@2.0.5: {}
 

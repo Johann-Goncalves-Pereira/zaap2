@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/gapi": "^0.0.47",
+    "gapi": "^0.0.3",
     "sass": "^1.83.1",
     "tailwindcss": "^3.4.17"
   },
