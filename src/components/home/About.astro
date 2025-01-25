@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 
+import MiniGallery from "@components/home/widgets/MiniGallery";
+
 import Instagram from "@media/assets/instagram.astro";
 import Profile from "@media/images/profile.png";
 import Twitter from "@media/assets/twitter.astro";
@@ -39,5 +41,17 @@ import Twitter from "@media/assets/twitter.astro";
       </a>
     </div>
   </header>
-  <footer class='md:col-start-1 row-start-1 grid'>aaa</footer>
+  <footer
+    class='md:col-start-1 row-start-1 grid grid-rows-[auto_1fr] gap-4 md:ml-12'
+  >
+    <div class='flex gap-4'>
+      <button class='px-8 py-4 rounded-full border border-dashed'
+        >Categorias</button
+      >
+      <button class='px-8 py-4 rounded-full border border-dashed'
+        >Historico</button
+      >
+    </div>
+    <MiniGallery />
+  </footer>
 </article>

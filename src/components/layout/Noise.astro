@@ -1,5 +1,7 @@
 ---
-const id = `noise_${Math.random().toString(36).substring(2, 9)}`;
+import { randomId } from "@utils/random";
+
+const id = `noise_${await randomId()}`;
 ---
 
 <svg
