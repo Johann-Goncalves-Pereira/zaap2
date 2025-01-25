@@ -1,15 +1,17 @@
 ---
+import { ClientRouter } from "astro:transitions";
+
 import Header from "@components/layout/Header.astro";
 import Noise from "@components/layout/Noise.astro";
+import Footer from "@components/layout/Footer.astro";
+
+import "@media/styles/_index.scss";
 
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-import "../media/styles/_index.scss";
-import Footer from "@components/layout/Footer.astro";
 ---
 
 <!doctype html>
@@ -24,7 +26,6 @@ import Footer from "@components/layout/Footer.astro";
     <meta name='generator' content={Astro.generator} />
 
     <title>{title}</title>
-
     <script type='speculationrules' is:inline>
       {
         "prerender": [
@@ -35,6 +36,7 @@ import Footer from "@components/layout/Footer.astro";
         ]
       }
     </script>
+    <ClientRouter />
   </head>
   <body class='border-gray-900'>
     <Header />
