@@ -1,0 +1,66 @@
+---
+import { fetchPhotos } from "@utils/google-photos";
+
+const photos = await fetchPhotos();
+---
+
+<div class='masonry-grid'>
+  {
+    photos.map((photo) => (
+      <div class='masonry-item'>
+        <img
+          src={photo.baseUrl}
+          alt={photo.filename}
+          loading='lazy'
+          class='w-full h-auto object-cover rounded-lg hover:scale-[1.02] transition-transform'
+        />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: 10px;
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+
+  .masonry-item {
+    grid-row-end: span var(--rows);
+  }
+
+  .masonry-item img {
+    height: 100%;
+    width: 100%;
+  }
+</style>
+
+<script>
+  // Calculate and set the grid row spans for each item
+  function resizeGridItems() {
+    const grid = document.querySelector(".masonry-grid");
+    const rowHeight = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-auto-rows")
+    );
+    const rowGap = parseInt(
+      window.getComputedStyle(grid).getPropertyValue("grid-row-gap")
+    );
+
+    const items = document.querySelectorAll(".masonry-item");
+    items.forEach((item) => {
+      const content = item.querySelector("img");
+      const rowSpan = Math.ceil(
+        (content.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap)
+      );
+      item.style.setProperty("--rows", rowSpan);
+    });
+  }
+
+  // Initial resize
+  window.addEventListener("load", resizeGridItems);
+  // Resize on window changes
+  window.addEventListener("resize", resizeGridItems);
+</script>

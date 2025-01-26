@@ -23,8 +23,10 @@
   },
   "editor.formatOnSave": true,
   "cSpell.words": [
+    "gapi",
     "lucide",
     "partytown",
+    "photoslibrary",
     "qwik",
     "qwikdev",
     "qwikest",
